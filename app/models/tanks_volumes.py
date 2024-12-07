@@ -1,6 +1,8 @@
+import uuid
+
 from django.db import models
 from django.utils import timezone
-import uuid
+
 from app.models.tanks import Tanks
 
 
@@ -18,5 +20,5 @@ class TankVolume(models.Model):
             "timestamp",
         )
 
-    def __repr__(self):
+    def __str__(self):
         return f"{self.tank.name}, {self.volume}: {self.timestamp}"

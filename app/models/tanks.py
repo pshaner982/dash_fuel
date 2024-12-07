@@ -24,5 +24,5 @@ class Tanks(models.Model):
             "name",
         )
 
-    def __repr__(self):
+    def __str__(self):
         return f"{self.company.name}, {self.name}"

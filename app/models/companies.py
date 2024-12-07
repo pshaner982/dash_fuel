@@ -1,6 +1,6 @@
-from django.db import models
-from django.utils import timezone
 import uuid
+
+from django.db import models
 
 
 class Companies(models.Model):
@@ -12,5 +12,5 @@ class Companies(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=240)
 
-    def __repr__(self):
+    def __str__(self):
         return self.name
