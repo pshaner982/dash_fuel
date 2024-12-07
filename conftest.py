@@ -1,7 +1,14 @@
 import pytest
 from faker import Faker
 from django.test import Client
-from app.models.fixtures import *
+from app.models.fixtures import (
+    sample_company,
+    mock_company,
+    sample_tank,
+    mock_tank,
+    mock_tank_volume,
+    sample_tank_volume,
+)
 
 fake = Faker("en_US")
 __all__ = [
@@ -10,6 +17,7 @@ __all__ = [
     "sample_company",
     "mock_company",
     "sample_tank",
+    "sample_tank_volume",
     "mock_tank",
     "mock_tank_volume",
 ]
