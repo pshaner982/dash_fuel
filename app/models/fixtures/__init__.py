@@ -1,5 +1,11 @@
 from .companies import mock_company, sample_company
-from .tanks import mock_tank, mock_tank_volume, sample_tank, sample_tank_volume
+from .tanks import (
+    mock_tank,
+    mock_tank_volume,
+    sample_tank,
+    sample_tank_volume,
+    sample_tank_with_multiple_volumes,
+)
 
 __all__ = [
     "sample_company",
@@ -8,4 +14,5 @@ __all__ = [
     "mock_tank",
     "mock_tank_volume",
     "sample_tank_volume",
+    "sample_tank_with_multiple_volumes",
 ]

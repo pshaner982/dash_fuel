@@ -1,13 +1,9 @@
 import pytest
-from faker import Faker
 from django.test import Client
+from faker import Faker
+
 from app.models.fixtures import (
-    sample_company,
-    mock_company,
-    sample_tank,
-    mock_tank,
-    mock_tank_volume,
-    sample_tank_volume,
+    mock_company, mock_tank, mock_tank_volume, sample_company, sample_tank, sample_tank_volume,
 )
 
 fake = Faker("en_US")
