@@ -16,3 +16,29 @@ def insert_tank_volume(volume: float, tank_id: str, time_stamp: datetime) -> Tan
     """
     ...
 
+def update_tank_volume(volume_id: str, volume: float = None, time_stamp: datetime = None) -> TankVolume:
+    """Will update an existing volume record for a tank volume id. To enable updating and error
+    correcting of volumes.
+
+    Arguments are optional and will only update what has been provided.  If the argument is
+    provided then will change the value on that record.
+    Args:
+         volume_id (str): the id of the tank volume id that will be updated.
+         volume (float): the volume of the tank volume id that will be updated.
+         time_stamp (datetime): the timestamp of the volume creation.
+    Raises:
+        TankException: the volume timestamp is in the future.
+        TankException: the tank_volume record does not exist.
+    """
+    ...
+
+def delete_tank_volume(volume_id: str) -> TankVolume:
+    """Will remove an existing tank volume record.
+    Args:
+        volume_id (str): the id of the tank volume id that will be deleted.
+    Raises:
+        TankException: the volume id does not exist.
+    Notes:
+        This will be a hard delete.
+    """
+    ...
