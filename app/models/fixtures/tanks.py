@@ -1,10 +1,13 @@
-import pytest
-from uuid import uuid4
 import random
+from uuid import uuid4
+
+import pytest
+import pytz
+
 from app.models.tanks import Tanks
 from app.models.tanks_volumes import TankVolume
 
-__all__ = ["mock_tank", "sample_tank", "mock_tank_volume"]
+__all__ = ["mock_tank", "sample_tank", "mock_tank_volume", "sample_tank_volume"]
 
 
 @pytest.fixture
@@ -38,6 +41,7 @@ def mock_tank_volume():
         volume=100,
     )
 
+
 @pytest.fixture
 @pytest.mark.django_db
 def sample_tank_volume(sample_tank, faker):
@@ -47,6 +51,8 @@ def sample_tank_volume(sample_tank, faker):
         id=faker.uuid4(),
         tank=tank,
         volume=faker.pyfloat(positive=True, right_digits=2),
-        timestamp=faker.past_datetime(start_date=f"-{random.randint(1, 365)}d")
+        timestamp=faker.past_datetime(start_date=f"-{random.randint(1, 365)}d",
+                                      end_date='-1d',
+                                      tzinfo=pytz.UTC),
     )
     return tank
