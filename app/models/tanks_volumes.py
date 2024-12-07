@@ -12,5 +12,11 @@ class TankVolume(models.Model):
     volume = models.FloatField()
     timestamp = models.DateTimeField(default=timezone.now)
 
+    class Meta:
+        unique_together = (
+            "tank",
+            "timestamp",
+        )
+
     def __repr__(self):
         return f"{self.tank.name}, {self.volume}: {self.timestamp}"
