@@ -1,6 +1,7 @@
 from datetime import datetime
 from app.models.tanks_volumes import TankVolume
 
+
 def insert_tank_volume(volume: float, tank_id: str, time_stamp: datetime) -> TankVolume:
     """creates a new volume record for the tank provided.  This can be used to create a new
     volume even in the past.
@@ -16,7 +17,10 @@ def insert_tank_volume(volume: float, tank_id: str, time_stamp: datetime) -> Tan
     """
     ...
 
-def update_tank_volume(volume_id: str, volume: float = None, time_stamp: datetime = None) -> TankVolume:
+
+def update_tank_volume(
+    volume_id: str, volume: float = None, time_stamp: datetime = None
+) -> TankVolume:
     """Will update an existing volume record for a tank volume id. To enable updating and error
     correcting of volumes.
 
@@ -31,6 +35,7 @@ def update_tank_volume(volume_id: str, volume: float = None, time_stamp: datetim
         TankException: the tank_volume record does not exist.
     """
     ...
+
 
 def delete_tank_volume(volume_id: str) -> TankVolume:
     """Will remove an existing tank volume record.

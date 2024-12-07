@@ -1,6 +1,6 @@
-
-
-def create_new_tank_for_company(company_id: str, tank_name: str, initial_volume: int = 0):
+def create_new_tank_for_company(
+    company_id: str, tank_name: str, initial_volume: int = 0
+):
     """Created to isolate the creation of a new tank for an existing company.
 
     Will ensure uniqueness in the tank name for the company catching the db error, and generating
@@ -27,5 +27,3 @@ def update_existing_tank(tank_id: str, updated_tank_details: dict):
         tank_id (str): UUID of the tank to update.
         updated_tank_details (dict): Dictionary of tank details, that will be changed.
     """
-
-

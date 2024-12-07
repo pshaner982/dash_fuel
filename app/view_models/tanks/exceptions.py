@@ -1,5 +1,7 @@
 import logging
-logger = logging.getLogger(__name__ )
+
+logger = logging.getLogger(__name__)
+
 
 class TankException(Exception):
     """Custom exception type designed should be raised by any business logic when the business
@@ -9,6 +11,7 @@ class TankException(Exception):
         log level warning might get changed do to sentry or other observability tool sensitivity
         to warning log level.
     """
+
     def __init__(self, *args):
         if args:
             self.message = args[0]
