@@ -1,7 +1,8 @@
 import pytest
 from uuid import uuid4
 
-from app.models.tanks import Tanks, TankVolume
+from app.models.tanks import Tanks
+from app.models.tanks_volumes import TankVolume
 
 __all__ = ["mock_tank", "sample_tank", "mock_tank_volume"]
 
