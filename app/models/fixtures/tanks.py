@@ -39,10 +39,10 @@ def sample_tank(sample_company, faker):
 
 
 @pytest.fixture
-def mock_tank_volume():
+def mock_tank_volume(faker):
     """Fixture to create a mock TankVolume instance."""
     return TankVolume(
-        id=uuid4(),
+        id=faker.uuid4(),
         tank_id=uuid4(),
         volume=100,
     )
@@ -54,7 +54,6 @@ def sample_tank_volume(sample_tank, faker):
     """Fixture to create and save a related company and tank instance to the test database."""
     tank = sample_tank
     tank = TankVolume.objects.create(
-        id=faker.uuid4(),
         tank=tank,
         volume=faker.pyfloat(positive=True, right_digits=2),
         timestamp=faker.date_time_between(
