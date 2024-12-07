@@ -51,8 +51,8 @@ def sample_tank_volume(sample_tank, faker):
         id=faker.uuid4(),
         tank=tank,
         volume=faker.pyfloat(positive=True, right_digits=2),
-        timestamp=faker.past_datetime(start_date=f"-{random.randint(1, 365)}d",
-                                      end_date='-1d',
-                                      tzinfo=pytz.UTC),
+        timestamp=faker.date_time_between(
+            start_date=f"-{random.randint(1, 365)}d", end_date="-1d", tzinfo=pytz.UTC
+        ),
     )
     return tank
